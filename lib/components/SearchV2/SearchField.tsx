@@ -59,14 +59,13 @@ const getRootStyle = ({ isViewOpen }: { isViewOpen: boolean }) => {
   if (isViewOpen) {
     styles = [
       ...styles,
-      'md:static',
-      'md:w-auto',
-      'md:z-auto',
-      'fixed',
-      'top-0',
-      'left-0',
+      'max-md:fixed',
+      'max-md:top-0',
+      'max-md:left-0',
       'z-[2]',
       'w-full',
+      'md:w-auto',
+      'md:z-auto',
     ]
   }
 
