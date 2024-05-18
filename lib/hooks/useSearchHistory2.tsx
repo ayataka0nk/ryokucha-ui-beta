@@ -25,7 +25,8 @@ export const useSearchHistory = ({ historyKey }: { historyKey: string }) => {
     () => getSnapshot(historyKey),
     () => getServerSnapshot(historyKey)
   )
-  const history = historyStr === '' ? '[]' : JSON.parse(historyStr)
+  const history = historyStr === '' ? [] : JSON.parse(historyStr)
+  console.log(history)
   const addHistory = (value: string) => {
     if (value === '') {
       return
