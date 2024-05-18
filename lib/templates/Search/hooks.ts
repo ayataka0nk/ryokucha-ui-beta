@@ -73,6 +73,7 @@ export const useSearchFieldDefaultState = ({
     handleFocus: handleFocus,
     handleChange: handleChange,
     setIsViewOpen,
-    handleClick
+    handleClick,
+    addHistory
   }
 }
