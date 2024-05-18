@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { useOutsideClick, useSearchHistory } from '../../main'
+import { useOutsideClick} from '../../main'
+import { useSearchHistory } from '../../hooks/useSearchHistory2'
 
 type Props = {
   historyKey: string
