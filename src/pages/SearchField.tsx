@@ -21,26 +21,12 @@ export const SearchFieldPage = () => {
     handleInputValueItemClick,
     handleHistoryItemClick,
     handleFocus,
-    handleChange
+    handleChange,
+    handleClick
   } = useSearchFieldDefaultState({
     historyKey: 'sample',
     searchedValue: 'searched value'
   })
-  // const { history, addHistory } = useSearchHistory({ historyKey: 'sample' })
-
-  // useEffect(() => {
-  //   const formdata = (e: FormDataEvent) => {
-  //     console.log('formdata')
-  //     const keyword = e.formData.get('keyword') as string
-  //     console.log(keyword)
-  //     addHistory(keyword)
-  //   }
-  //   const current = ref.current
-  //   current?.addEventListener('formdata', formdata)
-  //   return () => {
-  //     current?.removeEventListener('formdata', formdata)
-  //   }
-  // }, [addHistory])
 
   return (
     <div>
@@ -64,6 +50,7 @@ export const SearchFieldPage = () => {
           onHistoryItemClick={handleHistoryItemClick}
           onFocus={handleFocus}
           onChange={handleChange}
+          onClick={handleClick}
         />
       </form>
     </div>

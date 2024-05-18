@@ -65,7 +65,7 @@ const getRootStyle = ({ isViewOpen }: { isViewOpen: boolean }) => {
       'z-[2]',
       'w-full',
       'md:w-auto',
-      'md:z-auto',
+      'md:z-auto'
     ]
   }
 

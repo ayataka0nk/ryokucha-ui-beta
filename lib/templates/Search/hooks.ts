@@ -55,6 +55,9 @@ export const useSearchFieldDefaultState = ({
       buttonRef.current?.click()
     }
   }
+  const handleClick = () => {
+    setIsViewOpen(true)
+  }
   return {
     wrapperRef,
     inputRef: ref,
@@ -69,6 +72,7 @@ export const useSearchFieldDefaultState = ({
     handleHistoryItemClick: handleInputValueItemClick,
     handleFocus: handleFocus,
     handleChange: handleChange,
-    setIsViewOpen
+    setIsViewOpen,
+    handleClick
   }
 }
