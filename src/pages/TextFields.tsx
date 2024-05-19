@@ -1,6 +1,5 @@
 import { TextArea } from '../../lib/components/TextArea'
 import { TextField } from '../../lib/main'
-
 export const TextFields = () => {
   return (
     <div>
@@ -36,11 +35,11 @@ export const TextFields = () => {
       </div>
       <div>
         <h2>Filled Multi Line With Icon</h2>
-        <TextArea label="label" icon="MagnifyingGlass" />
+        <TextArea label="label" icon="MagnifyingGlass" defaultValue={"foo\naaaa"} />
       </div>
       <div>
         <h2>Outlined Single Line</h2>
-        <TextField variant="outlined" label="label" />
+        <TextField variant="outlined" label="label" value="" />
       </div>
       <div>
         <h2>Outlined TextField With Supporting Text And Icon</h2>
@@ -76,6 +75,15 @@ export const TextFields = () => {
           label="label"
           icon="MagnifyingGlass"
           error="hoge"
+        />
+      </div>
+      <div>
+        <h2>Outlined TextField multiline</h2>
+        <TextArea
+          variant="outlined"
+          label="label"
+          icon="MagnifyingGlass"
+          value={"foo\nbar\nbaz"}
         />
       </div>
     </div>

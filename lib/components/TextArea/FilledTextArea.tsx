@@ -1,13 +1,25 @@
-import { FormEventHandler, forwardRef, useCallback } from 'react'
+import {
+  FormEventHandler,
+  forwardRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef
+} from 'react'
 import { TextAreaProps } from './type'
 import { Icon, IconType } from '../Icon'
 
 export const FilledTextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  ({ id, label, icon, error, supportingText, className, ...props }, ref) => {
+  (
+    { id, label, icon, error, supportingText, className, ...props },
+    forwardedRef
+  ) => {
     const labelStyles = getLabelStyles(icon, error)
     const inputStyles = getInputStyles(icon, error, true)
     const supportingTextStyles = getSupportingTextStyles(error)
     const inputWrapper = getInputWrapperStyles()
+    const ref = useRef<HTMLTextAreaElement>(null)
+    useImperativeHandle(forwardedRef, () => ref.current as HTMLTextAreaElement)
     const autoresize: FormEventHandler<HTMLTextAreaElement> = useCallback(
       (event) => {
         const textarea = event.target as HTMLTextAreaElement
@@ -16,6 +28,12 @@ export const FilledTextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       },
       []
     )
+
+    useEffect(() => {
+      const textarea = ref.current as HTMLTextAreaElement
+      textarea.style.height = 'auto'
+      textarea.style.height = `${textarea.scrollHeight}px`
+    }, [props.defaultValue])
 
     return (
       <div className={`relative ${className}`}>
